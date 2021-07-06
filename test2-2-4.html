@@ -66,19 +66,13 @@
 		</select>
 	</div><br/>
 	 	<script >
-			var min =-1;
 			const hoanthanh = ()=>{
-			if(min<0){
-				alert("Bạn chưa hoàn thành kiểm tra!");
-			}
-			else{
 			var check= confirm("Bạn chắc chắn hoàn thành?");
 				if(check == true)
 					{
 						alert("Chúc mừng bạn đã hoàn thành\nChủ điểm 2- bài 2- buổi 4!");
 						open("https://nguyenvanthanhminn.wixsite.com/tuvung2-2-5","_self");
 					}
-			}
 							};
 			do{
 				window.onbeforeunload = function () {
