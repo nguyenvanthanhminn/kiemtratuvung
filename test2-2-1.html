@@ -1,1 +1,134 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kiểm tra từ vựng 2-2-1</title>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> 
+	<style>
+		#break1, #hyphen{display: none;}
+		#k, #j{
+			display: none;
+			height: 580px;
+			width: 100%;
+			border: 0;
+		}
+		#e{
+			height: 580px;
+			width: 100%;
+			border: 0;
+		}
+		#select
+		{
+			padding: 4px;
+			font-size: 100%;
+		}
+		#btn{
+			padding: 12px;
+			background: blue;
+			color: white;
+			border: none;
+			border-radius: 4px;
+			position: relative;
+			right: -43.5%;
+		}
+		#btn:hover{
+			cursor: pointer;
+			background: purple;
+			border: none;
+		}
+		/*Responsive*/
+		@media only screen and (max-width: 414px){
+			#break1{display:block;}
+			#hyphen{display: inline-flex;}
+			#break2
+			{
+				display: none;
+			}
+			#btn{
+				position: relative;
+				left: 30%;
+			}
+			h1{
+				font-size: 135%;
+			}
+			.footer{
+				display: flex;
+			}
+		}
+	</style>
+<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+<script src="https://cdn.rawgit.com/admsev/jquery-play-sound/master/jquery.playSound.js"></script>
+</head>
+<body>
+	<h1>KIỂM TRA TỪ VỰNG <span id="break1"></span>CHỦ ĐIỂM 2<span id="break2"><br/></span>
+		<span id="hyphen">-</span> BÀI 2 / BUỔI 1</h1>
+	<div class="main">
+		<select id="select" onchange="change()">
+			<option value="0">Kiểm tra tiếng Anh</option>
+			<option value="1">Kiểm tra tiếng Hàn</option>
+			<!--<option value="2">Bảng chữ cái tiếng Nhật</option>-->
+		</select>
+	</div><br/>
+	 <script >
+			// Ham lua chon ngon ngu
+			let min = -1;
+			const change =() =>
+			{
+				let selValue = document.getElementById("select").value;
+				if(selValue == 1){
+					min = 0;
+				   	document.getElementById("k").style.display = "block";
+					document.getElementById("e").style.display = "none";
+				   }
+				else
+					{
+						min = 0;
+						document.getElementById("k").style.display = "none";
+						document.getElementById("e").style.display = "block";
+					}	
+		};
+			// Ham hoan thanh
+			// Phai su dung class 
+		const hoanthanh = ()=>{
+			if(min<0){
+				alert("Bạn chưa hoàn thành kiểm tra!");
+			}
+			else{
+			var check= confirm("Bạn chắc chắn hoàn thành?");
+				if(check == true)
+					{
+						alert("Chúc mừng bạn đã hoàn thành!\nChủ điểm 2- bài 2- buổi 1!);
+						open("https://nguyenvanthanhminn.wixsite.com/tuvung2-2-2","_self");
+					}
+			}
+							};
+			window.onbeforeunload = function Close(m) {
+				if(m<0){
+				alert("Do you want to close?");
+				   }
+				};
+			window.onbeforeunload = function () {
+					return "Do you want to close?";
+				};
+        </script>
+	<!--Khung tiếng Anh-->
+	<div id="anh">
+	<iframe id="e" src="https://quizlet.com/604105375/match/embed?i=3rpgzc&x=1jj1"></iframe>
+	</div>
+	<!--Khung tiếng Hàn-->
+	<iframe id="k" src="https://quizlet.com/604107291/match/embed?i=3rpgzc&x=1jj1"></iframe><br/>
+	<div id="hoanthanh">
+		<button id="btn" onclick="hoanthanh()">Hoàn thành kiểm tra</button>
+	</div><br/>
+	<div class="footer">
+		<p><span class="fa fa-copyright"> Trang web kiểm tra từ vựng.<br/>&emsp; Designed in 2021</span></p>
+		<p >Từ vựng chủ điểm 2- bài 2- buổi 1</p>
+	</div>
+</body>
+</html>
 
