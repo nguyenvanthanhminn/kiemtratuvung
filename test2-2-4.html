@@ -67,21 +67,6 @@
 	</div><br/>
 	 	<script >
 			var min =-1;
-			const change = ()=>
-			{
-				 var selValue = document.getElementById("select").value;
-				if(selValue == 1){
-					min=1;
-				   	document.getElementById("k").style.display = "block";
-					document.getElementById("e").style.display = "none";
-				   }
-				else
-					{
-						min=0;
-						document.getElementById("k").style.display = "none";
-						document.getElementById("e").style.display = "block";
-					}
-			};
 			const hoanthanh = ()=>{
 			if(min<0){
 				alert("Bạn chưa hoàn thành kiểm tra!");
