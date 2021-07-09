@@ -1,0 +1,199 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kiểm tra từ vựng 2-2-1</title>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> 
+	<style>
+		#break1, #hyphen{display: none;}
+		#k, #j{
+			display: none;
+			height: 580px;
+			width: 100%;
+			border: 0;
+		}
+		#e{
+			height: 580px;
+			width: 100%;
+			border: 0;
+		}
+		.main{
+			margin-top: -1%;
+		}
+		#select
+		{
+			padding: 4px;
+			font-size: 100%;
+		}
+		#btn{
+			padding: 12px;
+			background: blue;
+			color: white;
+			border: none;
+			border-radius: 4px;
+			position: relative;
+			right: -43.5%;
+		}
+		#btn:hover{
+			cursor: pointer;
+			background: purple;
+			border: none;
+		}
+		/*Dark mode*/
+		#dark{
+			background: black;
+			color: white;
+			border: 0;
+			padding-left: 10px;
+			padding-right: 10px;
+			padding-top: 8px;
+			padding-bottom: 8px;
+		}
+		#light{
+			background: white;
+			color: black;
+			border: 0;
+			padding-left: 10px;
+			padding-right: 10px;
+			padding-top: 8px;
+			padding-bottom: 8px;
+		}
+		#dark:hover{
+			cursor: pointer;
+		}
+		#light:hover{
+			cursor: pointer;
+		}
+		/*Responsive*/
+		@media only screen and (max-width: 414px){
+			#break1{display:block;}
+			#hyphen{display: inline-flex;}
+			#break2, #td
+			{
+				display: none;
+			}
+			#btn{
+				position: relative;
+				left: 30%;
+			}
+			h1{
+				font-size: 135%;
+			}
+			.footer{
+				display: flex;
+			}
+		}
+	</style>
+</head>
+<body id="b">
+	<table style="margin-top: 1.6%" width="100%" height="20%">
+		<tr>
+			<td width="88%">
+				<h1 style="margin-top: 0%;">KIỂM TRA TỪ VỰNG <span id="break1"></span>CHỦ ĐIỂM 2<span id="break2"><br/></span>
+				<span id="hyphen">-</span> BÀI 2 / BUỔI 6</h1>
+			</td>
+			<td width="12%">
+				<button id="dark">Dark</button>
+				<button id="light">Light</button>
+			</td>
+		</tr>
+	</table>
+	<!--Ham dark light mode-->
+	<script>
+		let light=document.getElementById("light");
+		let dark=document.getElementById("dark");
+		let b= document.getElementById("b");
+		dark.onclick= function lightmode(){
+			dark.style.color= "white";
+			b.style.background= "black";
+			b.style.color= "white";
+			document.getElementById("select").style.background="grey";
+			document.getElementById("select").style.color="white";
+			document.getElementById("btn").style.background="grey";
+			document.getElementById("btn").style.color="white";
+			light.style.background="white";
+			light.style.color="black";
+		}
+		light.onclick= function darkmode(){
+			light.style.color= "black";
+			light.style.background= "white";
+			b.style.background= "white";
+			b.style.color= "black";
+			document.getElementById("select").style.background="white";
+			document.getElementById("select").style.color="black";
+			document.getElementById("btn").style.background="blue";
+			document.getElementById("btn").style.color="white";
+			dark.style.background="black";
+			dark.style.color="white";
+		}
+	</script>
+	<div class="main">
+		<select id="select" onchange="change()">
+			<option value="0">Kiểm tra tiếng Anh</option>
+			<option value="1">Kiểm tra tiếng Hàn</option>
+		</select>
+	</div><br/>
+	 	<script >
+			var min =-1;
+			const change = ()=>
+			{
+				 var selValue = document.getElementById("select").value;
+				if(selValue == 1){
+					min=1;
+				   	document.getElementById("k").style.display = "block";
+					document.getElementById("e").style.display = "none";
+				   }
+				else
+					{
+						min=0;
+						document.getElementById("k").style.display = "none";
+						document.getElementById("e").style.display = "block";
+					}
+			};
+			const hoanthanh = ()=>{
+			if(min<0){
+				alert("Bạn chưa hoàn thành kiểm tra!");
+			}
+			else{
+			var check= confirm("Bạn chắc chắn hoàn thành?");
+				if(check == true)
+					{
+						alert("Chúc mừng bạn đã hoàn thành\nChủ điểm 2- bài 2- buổi 6!");
+						open("https://nguyenvanthanhminn.wixsite.com/vocabulary2","_self");
+					}
+			}
+							};
+			do{
+				window.onbeforeunload = function () {
+					return "Do you want to close?";
+				}
+			} while(m ==-1 || m == 0);
+        </script>
+	<!--Khung tiếng Anh-->
+	<div id="anh">
+	<iframe id="e" src="https://quizlet.com/604747904/match/embed?i=3rpgzc&x=1jj1"></iframe>
+	</div>
+	<!--Khung tiếng Nhật-->
+	<iframe id="k" src="https://quizlet.com/604749654/match/embed?i=3rpgzc&x=1jj1"></iframe><br/>
+	<div id="hoanthanh">
+		<button id="btn" onClick="hoanthanh()">Hoàn thành kiểm tra</button>
+	</div><br/>
+	<div class="footer">
+		<table width="100%" border="0">
+			<tr>
+				<td valign="bottom" padding="0"><p><span class="fa fa-copyright"> Trang web kiểm tra từ vựng.<br/>&emsp; Designed in 2021</span></p></td>
+				<td id="td" align="right" valign="baseline"><p>Từ vựng chủ điểm 2- bài 2- buổi 1</p></td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>
+
+
+toucan-icon
+Translate
