@@ -66,6 +66,7 @@
 		</select>
 	</div><br/>
 	 	<script >
+			var min = 0;
 			const hoanthanh = ()=>{
 			var check= confirm("Bạn chắc chắn hoàn thành?");
 				if(check == true)
@@ -78,7 +79,7 @@
 				window.onbeforeunload = function () {
 					return "Do you want to close?";
 				}
-			} while(m ==-1 || m == 0);
+			} while(min ==-1 || min == 0);
         </script>
 	<!--Khung tiếng Hàn-->
 	<iframe id="k" src="https://quizlet.com/604386689/match/embed?i=3rpgzc&x=1jj1"></iframe><br/>
