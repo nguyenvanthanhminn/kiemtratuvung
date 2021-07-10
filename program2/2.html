@@ -281,7 +281,13 @@
 				if(check == true)
 					{
 						alert("Chúc mừng bạn đã hoàn thành chủ điểm 2- bài 2!");
-						open("https://nguyenvanthanhminn.wixsite.com/tuvung2-2-2","_self");
+						var op = prompt("Về trang chủ (nhập Home) hay đến bài tiếp theo (mặc định)? ","Đến bài tiếp theo");
+						if(op == "Home"){
+							open("https://nguyenvanthanhminn.wixsite.com/list2","_self");
+						}
+						else {
+							open("https://nguyenvanthanhminn.wixsite.com/vocabulary3","_self");
+						}
 					}
 			}
 		};
